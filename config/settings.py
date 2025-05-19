@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from datetime import timedelta
 from pathlib import Path
-
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -50,6 +49,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
     'redis',
+
+    # my apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -156,7 +158,7 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 cache_status = os.getenv('CACHE_STATUS')
 CACHE_ENABLED = cache_status
