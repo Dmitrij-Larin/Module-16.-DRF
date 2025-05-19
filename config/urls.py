@@ -36,12 +36,12 @@ schema_view = get_schema_view(
     permission_classes=[permissions.AllowAny, ],
 )
 
-
 urlpatterns = [
                   # base urls
                   path('admin/', admin.site.urls),
 
                   # app urls
+                  path('', include('sections.urls', namespace='sections')),
                   path('users/', include('users.urls', namespace='users')),
 
                   # documentation urls
