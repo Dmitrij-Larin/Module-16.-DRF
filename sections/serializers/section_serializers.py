@@ -2,7 +2,7 @@ from rest_framework.serializers import ModelSerializer
 from rest_framework.fields import SerializerMethodField
 
 from sections.models import Section, SectionContent
-from sections.serializers.sections_content_serializers import SectionContentSectionSerializer
+from sections.serializers.section_content_serializers import SectionContentSectionSerializer
 
 
 class SectionSerializer(ModelSerializer):
