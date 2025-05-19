@@ -8,11 +8,15 @@ class IsModerator(BasePermission):
     message = _('You are not a moderator')
 
     def has_permission(self, request, view):
-        return request.user.role == UserRoles.MODERATOR
+        if request.user.role == UserRoles.MODERATOR:
+            return True
+        return False
 
 
 class IsSuperuser(BasePermission):
     message = _('You are not a Superuser')
 
     def has_permission(self, request, view):
-        return request.user.is_superuser
+        if request.user.is_superuser:
+            return True
+        return False
